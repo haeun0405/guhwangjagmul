@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guhwangjagmul</title>
 </head>
+<style>
+    ul {
+        background-color: red;
+        list-style: none;
+        padding: 0;
+    }
+
+    .tmi_name {
+        background-color: yellow;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+
+    .tmi {
+        height: 300px;
+        background-color: green;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+
+    .crops_header {
+        background-color: yellow;
+        text-align: center;
+    }
+
+    .crops {
+        background-color: green;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+    }
+
+
+    .sweet_potato {
+        width: 130px;
+        height: 130px;
+        border-radius: 70%;
+        margin-left: 50px;
+    }
+
+    .potato {
+        width: 130px;
+        height: 130px;
+        border-radius: 70%;
+        margin-left: 50px;
+    }
+
+    .corn {
+        width: 130px;
+        height: 130px;
+        border-radius: 70%;
+        margin-left: 50px;
+    }
+
+    .peanut {
+        width: 130px;
+        height: 130px;
+        border-radius: 70%;
+        margin-left: 50px;
+    }
+</style>
+
 <body>
-    
+
     <div class="header">
         봄감자
     </div>
@@ -21,14 +90,63 @@
         저희 소개
     </div>
 
+    <div class="TMI">
+        <div class="tmi_name">
+            <ul class="t_tmi">
+                <h3>T-TMI</h3>
+            </ul>
+            <ul class="t_purpose">
+                <h3>수료 목표</h3>
+            </ul>
+            <ul class="t_rule">
+                <h3>팀의 규칙</h3>
+            </ul>
+        </div>
 
-    <div>
-        구황작물
+        <div class="tmi">
+            <ul>
+                저희 팀은 뭐시기뭐시기
+            </ul>
+
+            <ul>
+                수료 목표는 뭐시기뭐시기
+            </ul>
+
+            <ul>
+                팀의 규칙은 뭐라뭐라
+            </ul>
+        </div>
     </div>
 
 
-    <div>
-        작물소개
+    <div class="CROPS">
+
+        <div class="crops_header">
+            <h3>CROPS</h3>
+        </div>
+    
+        <div class="crops">
+            <div>
+                <img class="sweet_potato"
+                    src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTcx/MDAxNTA0MjU1NDUyMjMy.wj-KhXsSsDMK2_jzX4CGb9muFTpCXDxhg7ZRY_vOPOEg.BlNYVqXOZRU305Cn-w7089V2JfD7DOjE4r5EEth5lgMg.JPEG.nong-up/%EA%B3%A0%EA%B5%AC%EB%A7%882.JPG?type=w800"
+                    alt="">
+            </div>
+            <div>
+                <img class="potato" src="https://cdn.travie.com/news/photo/202104/21806_10684_4721.jpg" alt="">
+            </div>
+            <div>
+                <img class="corn"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyjqExpyxFu8ozgsJ1NWifkktNAE6WimSbClK7NI_zK0tGd9stOAO94z8nZ6lTRVxlYw&usqp=CAU"
+                    alt="">
+            </div>
+            <div>
+                <img class="peanut"
+                    src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/85FC/image/osCKumyoHGvXLTnhqPCUaYEZcQo.jpg"
+                    alt="">
+            </div>
+        </div>
     </div>
+   
 </body>
+
 </html>
