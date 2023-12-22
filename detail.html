@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로필</title>
     <style>
       body {
@@ -13,6 +16,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100vh;
       }
       .profile-container {
         width: 700px;
@@ -20,6 +24,7 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        margin-bottom: 20px;
       }
 
       .profile-header {
@@ -59,7 +64,34 @@
       a {
         text-decoration: none;
       }
+      .profile-info {
+        width: 1272px;
+        height: 431px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+      }
+      .button-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* 오른쪽 정렬 */
+      }
+      .back-btn {
+        padding: 10px 20px;
+        margin: auto;
+        cursor: pointer;
+        margin-right: 300px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+
     </style>
+  </head>
+  <body>
   </head>
   <body>
     <div class="profile-container">
@@ -71,21 +103,20 @@
           <img src="assets/img/freridog.jpg" alt="" />
         </div>
         <div class="profile-intro">
-          <!--프로필 정보 내용-->
-          <p><strong>하이</strong></p>
-          <p>하이하이하이</p>
-          <h2>하이하ㅣㅇ</h2>
-        </div>
-
-        <!--뒤로가기-->
-      </div>
-      <div class="profile-info">
         <!--프로필 정보 내용-->
         <p><strong>프로필</strong></p>
-        <p>힝구핑구힝힝구</p>
+        </div>
+        </div>
+      </div>
+      <!--뒤로가기-->
+      <div class="profile-info">
+        <p><strong>프로필</strong></p>
+      </div>
+      <div class="button-container">
         <button class="back-btn" onclick="goBack()">뒤로가기</button>
       </div>
     </div>
+
 
     <script>
       function goBack() {
@@ -94,3 +125,4 @@
     </script>
   </body>
 </html>
+
