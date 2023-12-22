@@ -7,6 +7,69 @@
     <title>Guhwangjagmul</title>
 </head>
 <style>
+    * {
+        margin: 0;
+    }
+
+    html,
+    body {
+        margin: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        height: 100px;
+        background-image: url('https://previews.123rf.com/images/ivandzyuba/ivandzyuba1305/ivandzyuba130500007/19974197-%EA%B0%90%EC%9E%90-%EB%B0%AD.jpg');
+        background-position: center;
+        background-size: cover;
+        color: white;
+        margin: 0px;
+        width: 100%;
+
+
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .nav {
+        text-align: center;
+        background-color: gray;
+        width: 50%;
+        height: 50px;
+
+
+        padding: 5px auto 10px auto;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        margin: 20px auto 20px auto;
+        line-height: 50px;
+    }
+
+
+    .nav li {
+        display: inline;
+        margin-right: 50px;
+        white-space: nowrap;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .intro {
+        background-color: aqua;
+        width: 90%;
+        height: 200px;
+        margin: 20px auto 20px auto;
+
+        text-align: center;
+        line-height: 20px;
+        padding-top: 20px;
+
+    }
+
     ul {
         background-color: red;
         list-style: none;
@@ -77,20 +140,27 @@
 <body>
 
     <div class="header">
-        봄감자
+        <h1>얘 봄감자가 맛있단다!</h1>
     </div>
 
 
     <div class="nav">
-        이동하는거
+        <ul>
+            <li><a href="#intro">intro</a></li>
+            <li><a href="#section1">작물보따리</a></li>
+            <li><a href="#section2">작품소개</a></li>
+        </ul>
     </div>
 
 
-    <div class="intro">
-        저희 소개
+    <div id="intro" class="intro">
+        <p>저희는 농부들에게 반란을 꿈꾸는 구황작물입니다. 구황작물에게 자유를! <br>
+            저희 팀원은 고구마, 감자, 옥수수, 땅콩으로 이루어져 있습니다! <br>
+            구황작물처럼 적은 기간이지만 요번 Spring 트랙 기간 동안 열심히 배워 꼭 수확되겠습니다!
+        </p>
     </div>
 
-    <div class="TMI">
+    <div id="section1" class="TMI">
         <div class="tmi_name">
             <ul class="t_tmi">
                 <h3>T-TMI</h3>
@@ -103,7 +173,7 @@
             </ul>
         </div>
 
-        <div class="tmi">
+        <div id="section2" class="tmi">
             <ul>
                 저희 팀은 뭐시기뭐시기
             </ul>
@@ -124,7 +194,7 @@
         <div class="crops_header">
             <h3>CROPS</h3>
         </div>
-    
+
         <div class="crops">
             <div>
                 <img class="sweet_potato"
@@ -146,7 +216,7 @@
             </div>
         </div>
     </div>
-   
+
 </body>
 
 </html>
