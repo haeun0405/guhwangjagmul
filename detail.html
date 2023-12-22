@@ -3,10 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>힝구
-    </title>
+    <title>프로필</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:  #f4f4f4;
+}
+.profile-container {
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.profile-header {
+    background-color: #f4f4f4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-photo {
+    padding: 20px;
+}
+    </style>
 </head>
 <body>
-    힝구핑구
+    
+    <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-photo"></div>
+                <h2>이름</h2>
+                <p>소개</p>
+            </div>
+            <div class="profile-info">
+                <!--프로필 정보 내용-->
+                <p><strong>프로필</strong></p>
+                <p>힝구핑구힝힝구</p>
+            </div>
+            <!--뒤로가기-->
+            <button class="back-btn" onclick="goBack()">뒤로가기</button>
+        </div>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+
 </body>
 </html>
