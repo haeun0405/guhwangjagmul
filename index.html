@@ -77,41 +77,68 @@
 
     }
 
-    .tmi ul {
+    .tmi_name>ul {
         background-color: red;
-        list-style: none;
-        padding: 0;
-    }
-
-    .tmi_name {
-        background-color: yellow;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-    }
-
-    .tmi {
-        height: 300px;
-        background-color: green;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-    }
-
-    .crops_header {
-        background-color: yellow;
         text-align: center;
     }
 
-    .crops {
-        background-color: green;
+    .tmi_name {
+        width: 800px;
+        background-color: yellow;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        text-align: c;
+    }
 
+
+
+    .tmi {
+        width: 800px;
+        height: 250px;
+        background-color: green;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin: 0 auto;
+    }
+
+    .tmi_tmi {
+        background-color: red;
+        width: 250px;
+        padding-top: 30px;
+        padding-right: 15px;
+        margin-left: 2.5%;
+    }
+
+    .crops_header {
+        width: 150px;
+        height: 40px;
+        background-color: #EDD0A4;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        padding-top: 20px;
+        border-radius: 10px;
+    }
+
+    .crops {
+        background-color: beige;
+        width: 800px;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        margin-bottom: 80px;
+        border-radius: 10px;
+        padding-top: 10px;
     }
 
 
@@ -169,29 +196,58 @@
 
     <div id="section1" class="TMI">
         <div class="tmi_name">
-            <ul class="t_tmi">
+            <ul class="t_tmi_tmi">
                 <h3>T-TMI</h3>
             </ul>
-            <ul class="t_purpose">
+            <ul class="t_tmi_purpose">
                 <h3>수료 목표</h3>
             </ul>
-            <ul class="t_rule">
+            <ul class="t_tmi_rule">
                 <h3>팀의 규칙</h3>
             </ul>
         </div>
 
         <div class="tmi">
+            <div class="tmi_tmi">
+                <ul>
+                    <p>
+                        E 1명, I 3명
+                        <br>창의적임
+                        <br>항상 졸려 함
+                        <br>항상 배고픔
+                        <br>안 씻고 드러옴
+                        <br>한 명씩 사라짐
+                        <br>밥시간 철저함
+                        <br>뭐가 잘 안 풀림
+                        <br>근데 결국 해냄
+                        <br>원녕님은 늦어서 땅콩이 됨
+                    </p>
+                </ul>
+            </div>
+           <div class="tmi_tmi">
             <ul>
-                저희 팀은 뭐시기뭐시기
+                <h3>수료했다는 것은 살아남았다는 것</h3>
+                <p>
+                    1. 스프링 4기 수료 후 좋은 개발자 되는 것
+                    <br>2. 좋은 프로젝트 만드는 것
+                    <br>3. 좋은 동료가 되는 것
+                </p>
             </ul>
-
+           </div>
+           <div class="tmi_tmi">
             <ul>
-                수료 목표는 뭐시기뭐시기
+                <p>
+                    어? 금지
+                    <br>둥글게 말하기
+                    <br>정보 공유하기
+                    <br>혼자 고민하지 않기
+                    <br>혼자라고 생각 말기
+                    <br>힘들다고 울지 말기
+                    <br>너와 나
+                    <br>우리는 알잖아
+                </p>
             </ul>
-
-            <ul>
-                팀의 규칙은 뭐라뭐라
-            </ul>
+           </div>
         </div>
     </div>
 
