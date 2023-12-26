@@ -1,164 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로필</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>프로필</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+      * {
+        font-family: "Gowun Batang", serif;
+      }
 
-    * {
-      font-family: 'Gowun Batang', serif;
-    }
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
-    body {
-      font-family: "Arial", sans-serif;
-      margin: 0 !important;
-      padding: 0 !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+      .container {
+        width: 60%;
+        /* Adjusted the width */
+        max-width: 670px;
+        margin-top: 10px;
+        background-color: antiquewhite;
+        overflow: auto;
+        border-radius: 20px;
+      }
 
-    .container {
-      width: 60%;
-      /* Adjusted the width */
-      max-width: 670px;
-      margin-top: 10px;
-      background-color: antiquewhite;
-      overflow: auto;
-      border-radius: 20px;
-    }
+      .sweet-potato {
+        color: #ad5a90;
+      }
 
-    .sweet-potato {
-      color: #ad5a90;
-    }
+      .profile-header {
+        position: fixed;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        color: white;
 
-    .profile-header {
-      position: fixed;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      color: white;
+        background-color: #2a9016;
+        display: flex;
+        justify-content: center;
+        width: 670px;
+        text-align: center;
+      }
 
-      background-color: #2a9016;
-      display: flex;
-      justify-content: center;
-      width: 670px;
-      text-align: center;
-    }
+      .profile-header h2 {
+        text-align: center;
+      }
 
-    .profile-header h2 {
-      text-align: center;
-    }
+      .profile-content {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        margin-top: 70px;
+        /* Adjust the direction to column for mobile responsiveness */
+        height: 200px;
+      }
 
-    .profile-content {
-      display: flex;
-      justify-content: flex-end;
-      padding: 20px;
-      margin-top: 70px;
-      /* Adjust the direction to column for mobile responsiveness */
-      height: 200px;
-    }
+      .profile-photo {
+        border-radius: 20px;
+        margin-bottom: 72px;
+        background-color: EDD0A4;
+      }
 
-    .profile-photo {
-      border-radius: 20px;
-      margin-bottom: 72px;
-      background-color: EDD0A4;
-    }
+      .profile-intro {
+        border-radius: 5px;
+        padding-top: 2.5%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    .profile-intro {
-      border-radius: 5px;
-      padding-top: 2.5%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-left: 2.5%;
+        background-color: #edd0a4;
+        display: flex;
+        flex-direction: column;
+      }
 
-      width: 100%;
-      margin-left: 2.5%;
-      background-color: #edd0a4;
-      display: flex;
-      flex-direction: column;
-    }
+      .profile-intro-data {
+        padding-left: 5%;
+        margin-top: -25px;
+      }
 
-    .profile-intro-data {
-      padding-left: 5%;
-      margin-top: -25px;
-    }
+      li {
+        list-style-type: none;
+      }
 
-    li {
-      list-style-type: none;
-    }
+      a {
+        text-decoration: none;
+      }
 
-    a {
-      text-decoration: none;
-    }
+      .profile-info {
+        width: 590px;
+        height: 431px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+      }
 
-    .profile-info {
-      width: 590px;
-      height: 431px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 20px;
-      text-align: left;
-    }
+      .button-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        /* 오른쪽 정렬 */
+      }
 
-    .button-container {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      /* 오른쪽 정렬 */
-    }
+      .back-btn {
+        padding: 10px 20px;
+        margin: auto;
+        cursor: pointer;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #edd0a4;
+        background-color: #edd0a4;
+        font-weight: bold;
+      }
 
-    .back-btn {
-      padding: 10px 20px;
-      margin: auto;
-      cursor: pointer;
-      margin-right: 20px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      border: 1px solid #EDD0A4;
-      background-color: #EDD0A4;
-      font-weight: bold;
-    }
+      .profile-info h2 {
+        font-size: 24px;
+        /* h2 태그의 글씨 크기 조절 */
+        margin-bottom: 0.5em;
+        color: #ad5a90;
+      }
 
-    .profile-info h2 {
-      font-size: 24px;
-      /* h2 태그의 글씨 크기 조절 */
-      margin-bottom: 0.5em;
-      color: #AD5A90;
-    }
+      .profile-info p {
+        font-size: 16px;
+        /* p 태그의 글씨 크기 조절 */
+      }
+    </style>
+  </head>
 
-    .profile-info p {
-      font-size: 16px;
-      /* p 태그의 글씨 크기 조절 */
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="profile-header">
-      <h2>작물소개</h2>
-    </div>
-    <div class="profile-content">
-      <div class="profile-photo">
-        <img src="assets/img/박하은.jpg" style="border-radius: 10px" width="200px" height="200px" />
+  <body>
+    <div class="container">
+      <div class="profile-header">
+        <h2>작물소개</h2>
       </div>
-      <div class="profile-intro">
-        <!--프로필 정보 내용-->
-        <div class="profile-intro-data">
-          <p><strong>이름 : 박하은</strong></p>
-          <p><strong>나이 : 27세</strong></p>
-          <p><strong>mbti : ENTP</strong></p>
-          <p><strong>blog : https://vmfmgmfm57321.tistory.com/</strong></p>
-          <p><strong>한마디 : ‘혼자가 아닌 같이’의 원칙을 가지고 있습니다.</strong></p>
+      <div class="profile-content">
+        <div class="profile-photo">
+          <img
+            id="profileImage"
+            style="border-radius: 10px"
+            width="200px"
+            height="200px"
+          />
         </div>
+        <div class="profile-intro">
+          <!--프로필 정보 내용-->
+        <div id="profile-intro-data"></div>
+      </div>
+    </div>
 
-        <!-- 이름 : 박하은
+          <!-- 이름 : 박하은
 MBTI : ENTP
 BLOG | https://vmfmgmfm57321.tistory.com/
 한마디 : ‘혼자가 아닌 같이’의 원칙을 가지고 있습니다.
@@ -174,30 +174,93 @@ BLOG:https://coding-98.tistory.com/
 한마디: 끝까지 열심히 해보겠습니다!
 > -->
 
-        <p></p>
+          <p></p>
+        </div>
+      </div>
+
+      <div id="profile-info-data" class="profile-info"></div>
+        
+      </div>
+      <div class="button-container">
+        <button class="back-btn" onclick="goBack()">뒤로가기</button>
       </div>
     </div>
 
-    <!--뒤로가기-->
-    <div class="profile-info">
-      <h2><strong>힘세고 강한 아침, 만일 내게 물어보면 나는 박하은.</strong></h2>
-      <p>대표적인 휴게소 간식으로 알감자만이 손꼽힘에 말하는 감자를 자처했지만</p>
-      <p>감자국 (강원도)의 남자 김용태에게 밀려 고구마의 자리에 만족했다.</p>
-      <p>알감자? 하. 됐어. 그건 신감자일거야.</p>
-      <p>저는 고구마로서, 감자보다 칼로리는 낮지만 맛은 달콤한 스윗-포테이토가 되었습니다.</p>
-      <p>칼바람 부는 겨울. 여러분의 고픈 배를 책임지고 몸을 따뜻하게 해주는 포근한 사람.</p>
-      <p>박하은이었습니다!</p>
-    </div>
-    <div class="button-container">
-      <button class="back-btn" onclick="goBack()">뒤로가기</button>
-    </div>
-  </div>
+    <script type="module">
+      // Firebase SDK 라이브러리 가져오기
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-  <script>
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCHDdfOmNRmPQgdSi32ywIltDkkr9oOl7Q",
+        authDomain: "guhwang-c44a7.firebaseapp.com",
+        projectId: "guhwang-c44a7",
+        storageBucket: "guhwang-c44a7.appspot.com",
+        messagingSenderId: "748470665287",
+        appId: "1:748470665287:web:59255dc4ac48d65f31b162",
+        measurementId: "G-DKH49Y85N1",
+      };
+
+      // Firebase 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function fetchProfileData(collectionName, profileId) {
+      try {
+        const docRef = doc(db, collectionName, profileId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          return docSnap.data();
+        } else {
+          console.log("No such document!");
+          return null;
+        }
+      } catch (error) {
+        console.error("Error fetching document: ", error);
+      }
+    }
+
+    //프로필 데이터 로드
+    async function loadProfileData() {
+      const profileId = localStorage.getItem("currentProfileId");
+      if (profileId) {
+        // profiles 컬렉션에서 프로필 소개 정보 가져오기
+        const introData = await fetchProfileData("profiles", profileId);
+        console.log(introData);
+        if (introData) {
+          document.getElementById("profile-intro-data").innerHTML = `
+            <p><strong>이름:</strong> ${introData.name}</p>
+            <p><strong>MBTI:</strong> ${introData.MBTI}</p>
+            <p><strong>Blog:</strong> ${introData.blog}</p>
+            <p><strong>한마디:</strong> ${introData.한마디}</p>
+          `;
+        if (introData.imageUrl) {
+          document.getElementById("profileImage").src = introData.imageUrl || '기본이미지경로';
+      }
+    }
+        } else {
+          console.error('Profile ID is not found in localStorage');
+        }
+      
+    
+
+        // profile-infos 컬렉션에서 프로필 상세 정보 가져오기
+        const infoData = await fetchProfileData("profile-infos", profileId);
+        if (infoData) {
+          document.getElementById("profile-info-data").innerHTML = `
+            <h2><strong>${infoData.title}</strong></h2>
+            <p>${infoData.자기소개}</p>
+          `;
+        }
+      }
+
+    loadProfileData();
+
     function goBack() {
       window.history.back();
     }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

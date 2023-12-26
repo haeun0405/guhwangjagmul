@@ -1,313 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guhwangjagmul</title>
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 
     * {
-        margin: 0;
-        font-family: 'Gowun Batang', serif;
+      margin: 0;
+      font-family: "Gowun Batang", serif;
     }
 
     html,
     body {
-        margin: 0px;
-        justify-content: center;
-        align-items: center;
-        background-color: #fffff0;
+      margin: 0px;
+      justify-content: center;
+      align-items: center;
+      background-color: #fffff0;
     }
 
     .header {
-        height: 150px;
-        background-image: url('https://previews.123rf.com/images/ivandzyuba/ivandzyuba1305/ivandzyuba130500007/19974197-%EA%B0%90%EC%9E%90-%EB%B0%AD.jpg');
-        background-position: center;
-        background-size: cover;
-        color: white;
-        margin: 0px;
-        width: 100%;
-        margin-bottom: 40px;
+      height: 150px;
+      background-image: url("https://previews.123rf.com/images/ivandzyuba/ivandzyuba1305/ivandzyuba130500007/19974197-%EA%B0%90%EC%9E%90-%EB%B0%AD.jpg");
+      background-position: center;
+      background-size: cover;
+      color: white;
+      margin: 0px;
+      width: 100%;
+      margin-bottom: 40px;
 
-
-        text-align: center;
-        line-height: 130px;
+      text-align: center;
+      line-height: 130px;
     }
 
     .nav {
-        text-align: center;
-        background-color: #2A9016;
-        width: 50%;
-        height: 50px;
-        border-radius: 8px;
+      text-align: center;
+      background-color: #2a9016;
+      width: 50%;
+      height: 50px;
+      border-radius: 8px;
 
-        padding: 10px auto 10px auto;
-        text-transform: uppercase;
-        letter-spacing: 10px;
-        margin: 20px auto 20px auto;
-        line-height: 50px;
+      padding: 10px auto 10px auto;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      margin: 20px auto 20px auto;
+      line-height: 50px;
 
-        margin-bottom: 50px;
+      margin-bottom: 50px;
     }
 
-
     .nav li {
-        display: inline;
-        margin-right: 50px;
-        white-space: nowrap;
+      display: inline;
+      margin-right: 50px;
+      white-space: nowrap;
     }
 
     .nav a {
-        text-decoration: none;
-        color: inherit;
+      text-decoration: none;
+      color: inherit;
     }
 
     .intro {
-        background-color: #B98E69;
-        width: 60%;
-        height: 200px;
-        margin: 20px auto 20px auto;
-        border-radius: 8px;
+      background-color: #b98e69;
+      width: 60%;
+      height: 200px;
+      margin: 20px auto 20px auto;
+      border-radius: 8px;
 
-        text-align: center;
-        line-height: 20px;
-        padding-top: 60px;
-        box-sizing: border-box;
+      text-align: center;
+      line-height: 20px;
+      padding-top: 60px;
+      box-sizing: border-box;
 
-        margin-bottom: 60px;
-
+      margin-bottom: 60px;
     }
 
-
-    .tmi_name>ul {
-        background-color: #AD5A90;
-        text-align: center;
-        flex: 1;
-        padding: 0 10px;
-        box-sizing: border-box;
-        border-radius: 10px;
-        margin-left: 1%;
+    .tmi_name > ul {
+      background-color: #ad5a90;
+      text-align: center;
+      flex: 1;
+      padding: 0 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      margin-left: 1%;
     }
-
 
     .tmi_name {
-        width: 750px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        margin: 0 auto;
-        margin-bottom: 30px;
-        text-align: center;
+      width: 750px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      text-align: center;
     }
 
-
-
-
     .tmi {
-        width: 750px;
-        height: 250px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        margin: 0 auto;
+      width: 750px;
+      height: 250px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      margin: 0 auto;
     }
 
     .tmi_tmi {
-        background-color: #2A9016;
-        width: 250px;
-        padding-top: 30px;
-        padding-right: 15px;
-        margin-left: 1%;
-        border-radius: 10px;
-        padding-top: 8px;
+      background-color: #2a9016;
+      width: 250px;
+      padding-top: 30px;
+      padding-right: 15px;
+      margin-left: 1%;
+      border-radius: 10px;
+      padding-top: 8px;
     }
 
     .tmi_tmi h3 {
-        font-size: x-large;
+      font-size: x-large;
     }
 
     .crops_header {
-        width: 150px;
-        height: 40px;
-        background-color: #EDD0A4;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 100px;
-        margin-bottom: 30px;
-        padding-top: 20px;
-        border-radius: 10px;
+      width: 150px;
+      height: 40px;
+      background-color: #edd0a4;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 100px;
+      margin-bottom: 30px;
+      padding-top: 20px;
+      border-radius: 10px;
     }
 
     .crops {
-        background-color: rgb(219, 219, 182);
-        width: 800px;
-        height: 150px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        margin-bottom: 80px;
-        border-radius: 10px;
-        padding-top: 10px;
+      background-color: rgb(219, 219, 182);
+      width: 800px;
+      height: 150px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      margin-bottom: 80px;
+      border-radius: 10px;
+      padding-top: 10px;
     }
 
-
     .sweet_potato {
-        width: 130px;
-        height: 130px;
-        border-radius: 70%;
-        margin-left: 50px;
+      width: 130px;
+      height: 130px;
+      border-radius: 70%;
+      margin-left: 50px;
     }
 
     .potato {
-        width: 130px;
-        height: 130px;
-        border-radius: 70%;
-        margin-left: 50px;
+      width: 130px;
+      height: 130px;
+      border-radius: 70%;
+      margin-left: 50px;
     }
 
     .corn {
-        width: 130px;
-        height: 130px;
-        border-radius: 70%;
-        margin-left: 50px;
+      width: 130px;
+      height: 130px;
+      border-radius: 70%;
+      margin-left: 50px;
     }
 
     .peanut {
-        width: 130px;
-        height: 130px;
-        border-radius: 70%;
-        margin-left: 50px;
+      width: 130px;
+      height: 130px;
+      border-radius: 70%;
+      margin-left: 50px;
     }
-</style>
+  </style>
 
-<body>
-
+  <body>
     <div class="header">
-        <h1>얘 봄감자가 맛있단다!</h1>
+      <h1>얘 봄감자가 맛있단다!</h1>
     </div>
-
 
     <div class="nav">
-        <ul>
-            <li><a href="#intro">intro</a></li>
-            <li><a href="#section1">작물보따리</a></li>
-            <li><a href="#section2">작품소개</a></li>
-        </ul>
+      <ul>
+        <li><a href="#intro">intro</a></li>
+        <li><a href="#section1">작물보따리</a></li>
+        <li><a href="#section2">작품소개</a></li>
+      </ul>
     </div>
 
-
     <div id="intro" class="intro">
-        <p>저희는 농부들에게 반란을 꿈꾸는 구황작물입니다. 구황작물에게 자유를! <br>
-            저희 팀원은 고구마, 감자, 옥수수, 땅콩으로 이루어져 있습니다! <br>
-            어려운 시기에 민생에 한 줄기 빛처럼 나타나는 구황작물처럼 Spring 4기의 빛이 되겠습니다.
-        </p>
+      <p>
+        저희는 농부들에게 반란을 꿈꾸는 구황작물입니다. 구황작물에게 자유를!
+        <br />
+        저희 팀원은 고구마, 감자, 옥수수, 땅콩으로 이루어져 있습니다! <br />
+        어려운 시기에 민생에 한 줄기 빛처럼 나타나는 구황작물처럼 Spring 4기의
+        빛이 되겠습니다.
+      </p>
     </div>
 
     <div id="section1" class="TMI">
-        <div class="tmi_name">
-            <ul>
-                <h3>T-TMI</h3>
-            </ul>
-            <ul>
-                <h3>수료 목표</h3>
-            </ul>
-            <ul>
-                <h3>팀의 규칙</h3>
-            </ul>
-        </div>
+      <div class="tmi_name">
+        <ul>
+          <h3>T-TMI</h3>
+        </ul>
+        <ul>
+          <h3>수료 목표</h3>
+        </ul>
+        <ul>
+          <h3>팀의 규칙</h3>
+        </ul>
+      </div>
 
-        <div class="tmi">
-            <div class="tmi_tmi">
-                <ul>
-                    <p>
-                        E 1명, I 3명
-                        <br>창의적임
-                        <br>항상 졸려 함
-                        <br>항상 배고픔
-                        <br>안 씻고 들어옴
-                        <br>한 명씩 사라짐
-                        <br>밥시간 철저함
-                        <br>뭐가 잘 안 풀림
-                        <br>근데 결국 해냄
-                        <br>원녕님은 늦어서 땅콩이 됨
-                    </p>
-                </ul>
-            </div>
-            <div class="tmi_tmi">
-                <ul>
-                    <br>
-                    <h3>수료했다는 것은
-                        <br>살아남았다는 것</h3>
-                    <p>
-                        <br>1. 스프링 4기 수료 후 좋은 개발자 되는 것
-                        <br>2. 좋은 프로젝트 만드는 것
-                        <br>3. 좋은 동료가 되는 것
-                    </p>
-                </ul>
-            </div>
-            <div class="tmi_tmi">
-                <ul>
-                    <p>
-                        <br>어? 금지
-                        <br>둥글게 말하기
-                        <br>정보 공유하기
-                        <br>혼자 고민하지 않기
-                        <br>혼자라고 생각 말기
-                        <br>힘들다고 울지 말기
-                        <br>너와 나
-                        <br>우리는 알잖아
-                    </p>
-                </ul>
-            </div>
+      <div class="tmi">
+        <div class="tmi_tmi">
+          <ul>
+            <p>
+              E 1명, I 3명
+              <br />창의적임 <br />항상 졸려 함 <br />항상 배고픔 <br />안 씻고
+              들어옴 <br />한 명씩 사라짐 <br />밥시간 철저함 <br />뭐가 잘 안
+              풀림 <br />근데 결국 해냄 <br />원녕님은 늦어서 땅콩이 됨
+            </p>
+          </ul>
         </div>
+        <div class="tmi_tmi">
+          <ul>
+            <br />
+            <h3>수료했다는 것은 <br />살아남았다는 것</h3>
+            <p>
+              <br />1. 스프링 4기 수료 후 좋은 개발자 되는 것 <br />2. 좋은
+              프로젝트 만드는 것 <br />3. 좋은 동료가 되는 것
+            </p>
+          </ul>
+        </div>
+        <div class="tmi_tmi">
+          <ul>
+            <p>
+              <br />어? 금지 <br />둥글게 말하기 <br />정보 공유하기 <br />혼자
+              고민하지 않기 <br />혼자라고 생각 말기 <br />힘들다고 울지 말기
+              <br />너와 나 <br />우리는 알잖아
+            </p>
+          </ul>
+        </div>
+      </div>
     </div>
-
 
     <div id="section2" class="CROPS">
+      <div class="crops_header">
+        <h3>CROPS</h3>
+      </div>
 
-        <div class="crops_header">
-            <h3>CROPS</h3>
+      <div class="crops">
+        <div>
+          <img
+            id="sweet_potato"
+            class="sweet_potato"
+            src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTcx/MDAxNTA0MjU1NDUyMjMy.wj-KhXsSsDMK2_jzX4CGb9muFTpCXDxhg7ZRY_vOPOEg.BlNYVqXOZRU305Cn-w7089V2JfD7DOjE4r5EEth5lgMg.JPEG.nong-up/%EA%B3%A0%EA%B5%AC%EB%A7%882.JPG?type=w800"
+            alt=""
+            onclick="redirectToProfile('sweet_potato')"
+          />
         </div>
-
-        <div class="crops">
-            <div>
-                <a href="detail.html">
-                    <img class="sweet_potato"
-                        src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTcx/MDAxNTA0MjU1NDUyMjMy.wj-KhXsSsDMK2_jzX4CGb9muFTpCXDxhg7ZRY_vOPOEg.BlNYVqXOZRU305Cn-w7089V2JfD7DOjE4r5EEth5lgMg.JPEG.nong-up/%EA%B3%A0%EA%B5%AC%EB%A7%882.JPG?type=w800"
-                        alt="">
-                </a>
-
-            </div>
-            <div>
-                <a href="detail2.html">
-                    <img class="potato" src="https://cdn.travie.com/news/photo/202104/21806_10684_4721.jpg" alt="">
-
-                </a>
-            </div>
-            <div>
-                <a href="detail3.html">
-                    <img class="corn"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyjqExpyxFu8ozgsJ1NWifkktNAE6WimSbClK7NI_zK0tGd9stOAO94z8nZ6lTRVxlYw&usqp=CAU"
-                        alt="">
-                </a>
-            </div>
-            <div>
-                <a href="detail4.html">
-                    <img class="peanut"
-                        src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/85FC/image/osCKumyoHGvXLTnhqPCUaYEZcQo.jpg"
-                        alt="">
-                </a>
-            </div>
+        <div>
+          <img
+            id="potato"
+            class="potato"
+            src="https://cdn.travie.com/news/photo/202104/21806_10684_4721.jpg"
+            alt=""
+            onclick="redirectToProfile('potato')"
+          />
         </div>
+        <div>
+          <img
+            id="corn"
+            class="corn"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyjqExpyxFu8ozgsJ1NWifkktNAE6WimSbClK7NI_zK0tGd9stOAO94z8nZ6lTRVxlYw&usqp=CAU"
+            alt=""
+            onclick="redirectToProfile('corn')"
+          />
+        </div>
+        <div>
+          <img
+            id="peanut"
+            class="peanut"
+            src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/85FC/image/osCKumyoHGvXLTnhqPCUaYEZcQo.jpg"
+            alt=""
+            onclick="redirectToProfile('peanut')"
+          />
+        </div>
+      </div>
     </div>
-
-</body>
-
+  </body>
+  <script>
+    function redirectToProfile(cropId) {
+      localStorage.setItem('currentProfileId', cropId);
+      window.location.href = 'detail.html'; // 프로필 페이지로 이동
+    }
+  </script>
 </html>
