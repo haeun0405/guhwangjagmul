@@ -236,14 +236,32 @@ BLOG:https://coding-98.tistory.com/
             <p><strong>Blog:</strong> ${introData.blog}</p>
             <p><strong>한마디:</strong> ${introData.한마디}</p>
           `;
+          // 이미지 로드
         if (introData.imageUrl) {
           document.getElementById("profileImage").src = introData.imageUrl || '기본이미지경로';
       }
     }
         } else {
-          console.error('Profile ID is not found in localStorage');
+          console.error('imageUrl is undefined or null.');
         }
-      
+        const imagePaths = {
+      'sweet_potato': 'assets/img/박하은.jpg',
+      'potato': 'assets/img/김용태.jpg',
+      'corn': 'assets/img/강승훈.jpg',
+      'peanut': 'assets/img/장원녕.jpg',
+    };
+
+    function loadProfileImage() {
+      // 로컬 스토리지에서 사용자 ID 가져오기
+      const userId = localStorage.getItem('currentProfileId');
+      // 매핑된 이미지 경로 가져오기
+      const imagePath = imagePaths[userId] || 'path/to/default/image.jpg'; // 기본 이미지 경로 설정
+      // 이미지 경로를 img 태그의 src 속성에 설정
+      document.getElementById('profileImage').src = imagePath;
+    }
+
+    // 페이지 로드 시 이미지 로드 함수 실행
+    loadProfileImage();
     
 
         // profile-infos 컬렉션에서 프로필 상세 정보 가져오기
