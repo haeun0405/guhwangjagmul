@@ -7,8 +7,11 @@
     <title>Guhwangjagmul</title>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
     * {
         margin: 0;
+        font-family: 'Gowun Batang', serif;
     }
 
     html,
@@ -16,6 +19,7 @@
         margin: 0px;
         justify-content: center;
         align-items: center;
+        background-color: #fffff0;
     }
 
     .header {
@@ -77,29 +81,35 @@
 
     }
 
+
     .tmi_name>ul {
-        background-color: red;
+        background-color: #AD5A90;
         text-align: center;
+        flex: 1;
+        padding: 0 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        margin-left: 1%;
     }
 
+
     .tmi_name {
-        width: 800px;
-        background-color: yellow;
+        width: 750px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: center;
+        justify-content: space-between;
         margin: 0 auto;
         margin-bottom: 30px;
-        text-align: c;
+        text-align: center;
     }
+
 
 
 
     .tmi {
-        width: 800px;
+        width: 750px;
         height: 250px;
-        background-color: green;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -108,11 +118,17 @@
     }
 
     .tmi_tmi {
-        background-color: red;
+        background-color: #2A9016;
         width: 250px;
         padding-top: 30px;
         padding-right: 15px;
-        margin-left: 2.5%;
+        margin-left: 1%;
+        border-radius: 10px;
+        padding-top: 8px;
+    }
+
+    .tmi_tmi h3 {
+        font-size: x-large;
     }
 
     .crops_header {
@@ -128,7 +144,7 @@
     }
 
     .crops {
-        background-color: beige;
+        background-color: rgb(219, 219, 182);
         width: 800px;
         height: 150px;
         display: flex;
@@ -196,13 +212,13 @@
 
     <div id="section1" class="TMI">
         <div class="tmi_name">
-            <ul class="t_tmi_tmi">
+            <ul>
                 <h3>T-TMI</h3>
             </ul>
-            <ul class="t_tmi_purpose">
+            <ul>
                 <h3>수료 목표</h3>
             </ul>
-            <ul class="t_tmi_rule">
+            <ul>
                 <h3>팀의 규칙</h3>
             </ul>
         </div>
@@ -215,7 +231,7 @@
                         <br>창의적임
                         <br>항상 졸려 함
                         <br>항상 배고픔
-                        <br>안 씻고 드러옴
+                        <br>안 씻고 들어옴
                         <br>한 명씩 사라짐
                         <br>밥시간 철저함
                         <br>뭐가 잘 안 풀림
@@ -224,30 +240,32 @@
                     </p>
                 </ul>
             </div>
-           <div class="tmi_tmi">
-            <ul>
-                <h3>수료했다는 것은 살아남았다는 것</h3>
-                <p>
-                    1. 스프링 4기 수료 후 좋은 개발자 되는 것
-                    <br>2. 좋은 프로젝트 만드는 것
-                    <br>3. 좋은 동료가 되는 것
-                </p>
-            </ul>
-           </div>
-           <div class="tmi_tmi">
-            <ul>
-                <p>
-                    어? 금지
-                    <br>둥글게 말하기
-                    <br>정보 공유하기
-                    <br>혼자 고민하지 않기
-                    <br>혼자라고 생각 말기
-                    <br>힘들다고 울지 말기
-                    <br>너와 나
-                    <br>우리는 알잖아
-                </p>
-            </ul>
-           </div>
+            <div class="tmi_tmi">
+                <ul>
+                    <br>
+                    <h3>수료했다는 것은
+                        <br>살아남았다는 것</h3>
+                    <p>
+                        <br>1. 스프링 4기 수료 후 좋은 개발자 되는 것
+                        <br>2. 좋은 프로젝트 만드는 것
+                        <br>3. 좋은 동료가 되는 것
+                    </p>
+                </ul>
+            </div>
+            <div class="tmi_tmi">
+                <ul>
+                    <p>
+                        <br>어? 금지
+                        <br>둥글게 말하기
+                        <br>정보 공유하기
+                        <br>혼자 고민하지 않기
+                        <br>혼자라고 생각 말기
+                        <br>힘들다고 울지 말기
+                        <br>너와 나
+                        <br>우리는 알잖아
+                    </p>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -260,22 +278,32 @@
 
         <div class="crops">
             <div>
-                <img class="sweet_potato"
-                    src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTcx/MDAxNTA0MjU1NDUyMjMy.wj-KhXsSsDMK2_jzX4CGb9muFTpCXDxhg7ZRY_vOPOEg.BlNYVqXOZRU305Cn-w7089V2JfD7DOjE4r5EEth5lgMg.JPEG.nong-up/%EA%B3%A0%EA%B5%AC%EB%A7%882.JPG?type=w800"
-                    alt="">
+                <a href="detail.html">
+                    <img class="sweet_potato"
+                        src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MDFfMTcx/MDAxNTA0MjU1NDUyMjMy.wj-KhXsSsDMK2_jzX4CGb9muFTpCXDxhg7ZRY_vOPOEg.BlNYVqXOZRU305Cn-w7089V2JfD7DOjE4r5EEth5lgMg.JPEG.nong-up/%EA%B3%A0%EA%B5%AC%EB%A7%882.JPG?type=w800"
+                        alt="">
+                </a>
+
             </div>
             <div>
-                <img class="potato" src="https://cdn.travie.com/news/photo/202104/21806_10684_4721.jpg" alt="">
+                <a href="detail2.html">
+                    <img class="potato" src="https://cdn.travie.com/news/photo/202104/21806_10684_4721.jpg" alt="">
+
+                </a>
             </div>
             <div>
-                <img class="corn"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyjqExpyxFu8ozgsJ1NWifkktNAE6WimSbClK7NI_zK0tGd9stOAO94z8nZ6lTRVxlYw&usqp=CAU"
-                    alt="">
+                <a href="detail3.html">
+                    <img class="corn"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyjqExpyxFu8ozgsJ1NWifkktNAE6WimSbClK7NI_zK0tGd9stOAO94z8nZ6lTRVxlYw&usqp=CAU"
+                        alt="">
+                </a>
             </div>
             <div>
-                <img class="peanut"
-                    src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/85FC/image/osCKumyoHGvXLTnhqPCUaYEZcQo.jpg"
-                    alt="">
+                <a href="detail4.html">
+                    <img class="peanut"
+                        src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/85FC/image/osCKumyoHGvXLTnhqPCUaYEZcQo.jpg"
+                        alt="">
+                </a>
             </div>
         </div>
     </div>
