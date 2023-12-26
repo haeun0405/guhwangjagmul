@@ -1,142 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프로필</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .container {
-        width: 60%;
-        /* Adjusted the width */
-        max-width: 670px;
-        margin-top: 10px;
-        background-color: antiquewhite;
-        overflow: auto;
-        border-radius: 20px;
-      }
-      .sweet-potato {
-        color: #ad5a90;
-      }
-      .profile-header {
-        position: fixed;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        color: white;
 
-        background-color: #2a9016;
-        display: flex;
-        justify-content: center;
-        width: 670px;
-        text-align: center;
-      }
-      .profile-header h2 {
-        text-align: center;
-      }
-      .profile-content {
-        display: flex;
-        justify-content: flex-end;
-        padding: 20px;
-        margin-top: 70px;
-        /* Adjust the direction to column for mobile responsiveness */
-        height: 200px;
-      }
-      .profile-photo {
-        border-radius: 20px;
-        margin-bottom: 72px;
-        background-color: EDD0A4;
-      }
-      .profile-intro {
-        border-radius: 5px;
-        padding-top: 2.5%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로필</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
 
-        width: 100%;
-        margin-left: 2.5%;
-        background-color: #edd0a4;
-        display: flex;
-        flex-direction: column;
-      }
-      .profile-intro-data {
-        padding-left: 5%;
-      }
-      li {
-        list-style-type: none;
-      }
-      a {
-        text-decoration: none;
-      }
-      .profile-info {
-        width: 590px;
-        height: 431px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin: 20px;
-        text-align: left;
-      }
-      .button-container {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end; /* 오른쪽 정렬 */
-      }
-      .back-btn {
-        padding: 10px 20px;
-        margin: auto;
-        cursor: pointer;
-        margin-right: 20px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-        border: 1px solid #EDD0A4;
-        background-color: #EDD0A4;
-        font-weight: bold;
-      }
-      .profile-info h2 {
-      font-size: 24px; /* h2 태그의 글씨 크기 조절 */
+    * {
+      font-family: 'Gowun Batang', serif;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 60%;
+      /* Adjusted the width */
+      max-width: 670px;
+      margin-top: 10px;
+      background-color: antiquewhite;
+      overflow: auto;
+      border-radius: 20px;
+    }
+
+    .sweet-potato {
+      color: #ad5a90;
+    }
+
+    .profile-header {
+      position: fixed;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      color: white;
+
+      background-color: #2a9016;
+      display: flex;
+      justify-content: center;
+      width: 670px;
+      text-align: center;
+    }
+
+    .profile-header h2 {
+      text-align: center;
+    }
+
+    .profile-content {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      margin-top: 70px;
+      /* Adjust the direction to column for mobile responsiveness */
+      height: 200px;
+    }
+
+    .profile-photo {
+      border-radius: 20px;
+      margin-bottom: 72px;
+      background-color: EDD0A4;
+    }
+
+    .profile-intro {
+      border-radius: 5px;
+      padding-top: 2.5%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      width: 100%;
+      margin-left: 2.5%;
+      background-color: #edd0a4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-intro-data {
+      padding-left: 5%;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .profile-info {
+      width: 590px;
+      height: 431px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      text-align: left;
+    }
+
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      /* 오른쪽 정렬 */
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      margin: auto;
+      cursor: pointer;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #EDD0A4;
+      background-color: #EDD0A4;
+      font-weight: bold;
+    }
+
+    .profile-info h2 {
+      font-size: 24px;
+      /* h2 태그의 글씨 크기 조절 */
       margin-bottom: 0.5em;
       color: #2A9016;
     }
+
     .profile-info p {
-      font-size: 16px; /* p 태그의 글씨 크기 조절 */
+      font-size: 16px;
+      /* p 태그의 글씨 크기 조절 */
     }
+  </style>
+</head>
 
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="profile-header">
-        <h2>작물소개</h2>
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <h2>작물소개</h2>
+    </div>
+    <div class="profile-content">
+      <div class="profile-photo">
+        <img src="assets/img/강승훈.jpg" style="border-radius: 10px" width="200px" height="200px" />
       </div>
-      <div class="profile-content">
-        <div class="profile-photo">
-          <img
-            src="assets/img/강승훈.jpg"
-            style="border-radius: 10px"
-            width="200px"
-            height="200px"
-          />
+      <div class="profile-intro">
+        <!--프로필 정보 내용-->
+        <div class="profile-intro-data">
+          <p><strong>이름 : 강승훈</strong></p>
+          <p><strong>mbti : ISTJ</strong></p>
+          <p><strong>blog : https://coding-98.tistory.com/</strong></p>
+          <p><strong>한마디 : 끝까지 열심히 해보겠습니다!</strong></p>
         </div>
-        <div class="profile-intro">
-          <!--프로필 정보 내용-->
-          <div class="profile-intro-data">
-            <p><strong>이름 : 강승훈</strong></p>
-            <p><strong>mbti : ISTJ</strong></p>
-            <p><strong>blog : https://coding-98.tistory.com/</strong></p>
-            <p><strong>한마디 : 끝까지 열심히 해보겠습니다!</strong></p>
-          </div>
 
-          <!-- 이름 : 박하은
+        <!-- 이름 : 박하은
 MBTI : ENTP
 BLOG | https://vmfmgmfm57321.tistory.com/
 한마디 : ‘혼자가 아닌 같이’의 원칙을 가지고 있습니다.
@@ -152,27 +172,28 @@ BLOG:https://coding-98.tistory.com/
 한마디: 끝까지 열심히 해보겠습니다!
 > -->
 
-          <p></p>
-        </div>
-      </div>
-
-      <!--뒤로가기-->
-      <div class="profile-info">
-        <h2><strong>안녕하세요 옥수수 나라에서 온 옥수수 대장 강승훈 입니다.</strong></h2>
-        <p>옥수수철이 끝나 시들어가는 이 시기에 기강을 잡고자 나오게 되었습니다.</p>
-        <p>겉보기에 껍질에 쌓여있어 보이지만 껍질을 벗겨만 준다면</p>
-        <p>누구보다 환하게 대하는 옥수수입니다.</p>
-        <p>이번 기회를 통해 모든분들과 성장하는 시간을 가지고 싶습니다!!!</p>
-      </div>
-      <div class="button-container">
-        <button class="back-btn" onclick="goBack()">뒤로가기</button>
+        <p></p>
       </div>
     </div>
 
-    <script>
-      function goBack() {
-        window.history.back();
-      }
-    </script>
-  </body>
+    <!--뒤로가기-->
+    <div class="profile-info">
+      <h2><strong>안녕하세요 옥수수 나라에서 온 옥수수 대장 강승훈 입니다.</strong></h2>
+      <p>옥수수철이 끝나 시들어가는 이 시기에 기강을 잡고자 나오게 되었습니다.</p>
+      <p>겉보기에 껍질에 쌓여있어 보이지만 껍질을 벗겨만 준다면</p>
+      <p>누구보다 환하게 대하는 옥수수입니다.</p>
+      <p>이번 기회를 통해 모든분들과 성장하는 시간을 가지고 싶습니다!!!</p>
+    </div>
+    <div class="button-container">
+      <button class="back-btn" onclick="goBack()">뒤로가기</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+
 </html>
