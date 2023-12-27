@@ -448,11 +448,13 @@
 
     function openModal() {
       // 프로필 자기 소개 정보만 가져와서 에디터에 로드
-      const currentIntroduction = document.getElementById("profile-info-data").querySelector('p').innerText;
+      const currentIntroduction = document.getElementById("profile-info-data").innerText;
 
-      document.getElementById('editorContent').innerHTML = `
-    ${currentIntroduction}
-  `;
+      // 정규 표현식을 사용하여 "title" 부분 제거
+      const introWithoutTitle = currentIntroduction.replace(/^[^\n]*\n/, '');
+
+      // 에디터에 기존 내용 뒤에 새로운 내용을 추가
+      document.getElementById('editorContent').innerHTML = introWithoutTitle.replace(/\n/g, '<br>');
 
       // 에디터 모달 표시
       document.getElementById('editorModal').style.display = 'block';
