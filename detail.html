@@ -138,6 +138,14 @@
         margin-bottom: 0.5em;
         color: #ad5a90;
       }
+      .profile-data {
+        height: 30px;
+        display: block;
+        padding-left: 20px;
+      }
+      .profile-data p {
+        display: inline-block;
+      }
     </style>
   </head>
 
@@ -154,35 +162,14 @@
             width="200px"
             height="200px"
           />
-          <!-- <input type="file" id="inputImage" accept=".png, .jpeg" />
-
-          <button id="sendButton">업로드</button>
-
-          <img src="" class="uploadImage" /> -->
         </div>
         <div class="profile-intro" style="display: inline-block">
           <button class="modify" style="width: 30%">프로필 수정</button>
-          <button class="reset" style="width: 40%">초기화</button>
+          <!-- <button class="reset" style="width: 40%">초기화</button> -->
           <!--프로필 정보 내용-->
           <div id="profile-intro-data"></div>
         </div>
       </div>
-
-      <!-- 이름 : 박하은
-MBTI : ENTP
-BLOG | https://vmfmgmfm57321.tistory.com/
-한마디 : ‘혼자가 아닌 같이’의 원칙을 가지고 있습니다.
-
-이름 : 김용태
-나이 : 26
-MBTI : ISTJ
-https://velog.io/@rdxlaydo--
-
-이름:강승훈  
-MBTI:ISTJ  
-BLOG:https://coding-98.tistory.com/  
-한마디: 끝까지 열심히 해보겠습니다!
-> -->
 
       <p></p>
     </div>
@@ -243,17 +230,17 @@ BLOG:https://coding-98.tistory.com/
           console.log(introData);
           if (introData) {
             document.getElementById("profile-intro-data").innerHTML = `
-            <div style="width: 100%; display: inline-block; padding-left: 20px; height : 20px;">
-              <strong >이름:</strong> <p id="name" style="display: inline-block; margin-right: 5px; " class="text" contenteditable="false">${introData.name}</p>
+            <div class="profile-data">
+              <strong >이름:</strong> <p id="name" class="text" contenteditable="false">${introData.name}</p>
               </div>
-              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
-              <strong >mbti:</strong> <p id="mbti"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.MBTI}</p>
+              <div class="profile-data">
+              <strong >mbti:</strong> <p id="mbti" class="text" contenteditable="false">${introData.MBTI}</p>
               </div>
-              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
-              <strong >blog:</strong> <p id="blog"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.blog}</p>
+              <div class="profile-data">
+              <strong >blog:</strong> <p id="blog" class="text" contenteditable="false">${introData.blog}</p>
               </div>
-              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
-              <strong >한마디:</strong> <p id="comment"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.한마디}</p>
+              <div class="profile-data">
+              <strong >한마디:</strong> <p id="comment" class="text" contenteditable="false">${introData.한마디}</p>
               </div>
             `;
             // 이미지 로드
@@ -295,15 +282,6 @@ BLOG:https://coding-98.tistory.com/
       }
 
       loadProfileData();
-
-      function fileLoadNSave() {
-        let selectFile = document.querySelector("#inputImage").files[0]; // input에 저장된 데이터 가져오기
-        const file = URL.createObjectURL(selectFile); // file에 url저장
-        document.querySelector("#profileImage").src = file; // profileImage에 이미지url저장
-      }
-      document;
-      // .querySelector("#sendButton")
-      // .addEventListener("click", fileLoadNSave);
 
       function goBack() {
         window.history.back();
@@ -354,23 +332,6 @@ BLOG:https://coding-98.tistory.com/
           toggleContentEditable(); // 수정 모드 종료
         }
       }
-      // function profileReset() {
-      //   const nameElement = document.getElementById("name");
-      //   const mbtiElement = document.getElementById("mbti");
-      //   const blogElement = document.getElementById("blog");
-      //   const commentElement = document.getElementById("comment");
-      //   const resetData = {
-      //     name: "",
-      //     MBTI: "",
-      //     blog: "",
-      //     한마디: "",
-      //   };
-      //   if (nameElement) nameElement.innerText = resetData.name;
-      //   if (mbtiElement) mbtiElement.innerText = resetData.MBTI;
-      //   if (blogElement) blogElement.innerText = resetData.blog;
-      //   if (commentElement) commentElement.innerText = resetData.한마디;
-      // }
-
       document
         .querySelector(".modify")
         .addEventListener("click", profileModify);
