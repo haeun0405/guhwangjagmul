@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로필</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 
@@ -58,7 +59,7 @@
         display: flex;
         justify-content: flex-end;
         padding: 20px;
-        margin-top: 70px;
+        margin-top: 90px;
         /* Adjust the direction to column for mobile responsiveness */
         height: 200px;
       }
@@ -137,11 +138,6 @@
         margin-bottom: 0.5em;
         color: #ad5a90;
       }
-
-      .profile-info p {
-        font-size: 16px;
-        /* p 태그의 글씨 크기 조절 */
-      }
     </style>
   </head>
 
@@ -158,13 +154,15 @@
             width="200px"
             height="200px"
           />
-          <input type="file" id="inputImage" accept=".png, .jpeg" />
+          <!-- <input type="file" id="inputImage" accept=".png, .jpeg" />
 
           <button id="sendButton">업로드</button>
 
-          <img src="" class="uploadImage" />
+          <img src="" class="uploadImage" /> -->
         </div>
-        <div class="profile-intro">
+        <div class="profile-intro" style="display: inline-block">
+          <button class="modify" style="width: 30%">프로필 수정</button>
+          <button class="reset" style="width: 40%">초기화</button>
           <!--프로필 정보 내용-->
           <div id="profile-intro-data"></div>
         </div>
@@ -202,6 +200,7 @@ BLOG:https://coding-98.tistory.com/
         getFirestore,
         doc,
         getDoc,
+        setDoc,
       } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -244,11 +243,19 @@ BLOG:https://coding-98.tistory.com/
           console.log(introData);
           if (introData) {
             document.getElementById("profile-intro-data").innerHTML = `
-            <p><strong>이름:</strong> ${introData.name}</p>
-            <p><strong>MBTI:</strong> ${introData.MBTI}</p>
-            <p><strong>Blog:</strong> ${introData.blog}</p>
-            <p><strong>한마디:</strong> ${introData.한마디}</p>
-          `;
+            <div style="width: 100%; display: inline-block; padding-left: 20px; height : 20px;">
+              <strong >이름:</strong> <p id="name" style="display: inline-block; margin-right: 5px; " class="text" contenteditable="false">${introData.name}</p>
+              </div>
+              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
+              <strong >mbti:</strong> <p id="mbti"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.MBTI}</p>
+              </div>
+              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
+              <strong >blog:</strong> <p id="blog"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.blog}</p>
+              </div>
+              <div style="width: 100%; display: inline-block; padding-left: 20px; height : 30px;">
+              <strong >한마디:</strong> <p id="comment"style="display: inline-block; margin-right: 5px;" class="text" contenteditable="false">${introData.한마디}</p>
+              </div>
+            `;
             // 이미지 로드
             if (introData.imageUrl) {
               document.getElementById("profileImage").src =
@@ -281,9 +288,9 @@ BLOG:https://coding-98.tistory.com/
         const infoData = await fetchProfileData("profile-infos", profileId);
         if (infoData) {
           document.getElementById("profile-info-data").innerHTML = `
-            <h2><strong>${infoData.title}</strong></h2>
-            <p>${infoData.자기소개}</p>
-          `;
+              <h2><strong>${infoData.title}</strong></h2>
+              <p>${infoData.자기소개}</p>
+            `;
         }
       }
 
@@ -294,16 +301,81 @@ BLOG:https://coding-98.tistory.com/
         const file = URL.createObjectURL(selectFile); // file에 url저장
         document.querySelector("#profileImage").src = file; // profileImage에 이미지url저장
       }
-      document
-        .querySelector("#sendButton")
-        .addEventListener("click", fileLoadNSave);
+      document;
+      // .querySelector("#sendButton")
+      // .addEventListener("click", fileLoadNSave);
 
       function goBack() {
         window.history.back();
       }
+      function toggleContentEditable() {
+        // p 태그의 contenteditable 속성을 토글
+        const isEditable =
+          document.querySelector(".text").contentEditable === "true";
+        document
+          .querySelectorAll(".text")
+          .forEach((p) => (p.contentEditable = !isEditable));
+        // isEditable 토글
+      }
+      async function saveProfileData(editedData) {
+        try {
+          const profileId = localStorage.getItem("currentProfileId");
+          const docRef = doc(db, "profiles", profileId);
+          await setDoc(docRef, editedData, { merge: true });
+          console.log("프로필 데이터가 성공적으로 저장되었습니다.");
+        } catch (error) {
+          console.error("프로필 데이터 저장 중 오류 발생:", error);
+        }
+      }
+      function profileModify() {
+        // 수정 모드 토글
+        toggleContentEditable();
+        // 버튼 텍스트 변경
+        const buttonText = document.querySelector(".modify").innerText;
+        document.querySelector(".modify").innerText =
+          buttonText === "프로필 수정" ? "저장" : "프로필 수정";
+        // 저장 버튼일 경우, 수정 내용을 저장하고 수정 모드 종료
+        if (buttonText === "저장") {
+          const nameElement = document.getElementById("name");
+          const mbtiElement = document.getElementById("mbti");
+          const blogElement = document.getElementById("blog");
+          const commentElement = document.getElementById("comment");
+
+          const editedData = {
+            name: nameElement ? nameElement.innerText : "",
+            MBTI: mbtiElement ? mbtiElement.innerText : "",
+            blog: blogElement ? blogElement.innerText : "",
+            한마디: commentElement ? commentElement.innerText : "",
+          };
+
+          // TODO: Firebase 또는 다른 저장소에 수정된 내용 저장 로직 추가
+          console.log("저장된 내용:", editedData);
+          saveProfileData(editedData);
+          toggleContentEditable(); // 수정 모드 종료
+        }
+      }
+      // function profileReset() {
+      //   const nameElement = document.getElementById("name");
+      //   const mbtiElement = document.getElementById("mbti");
+      //   const blogElement = document.getElementById("blog");
+      //   const commentElement = document.getElementById("comment");
+      //   const resetData = {
+      //     name: "",
+      //     MBTI: "",
+      //     blog: "",
+      //     한마디: "",
+      //   };
+      //   if (nameElement) nameElement.innerText = resetData.name;
+      //   if (mbtiElement) mbtiElement.innerText = resetData.MBTI;
+      //   if (blogElement) blogElement.innerText = resetData.blog;
+      //   if (commentElement) commentElement.innerText = resetData.한마디;
+      // }
+
+      document
+        .querySelector(".modify")
+        .addEventListener("click", profileModify);
       document.querySelector(".back-btn").addEventListener("click", goBack);
       const fileDOM = document.querySelector("#profileImage");
-      const preview = document.querySelector(".profile-photo");
     </script>
   </body>
 </html>
