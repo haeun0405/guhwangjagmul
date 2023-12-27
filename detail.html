@@ -1,235 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프로필</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 
-      * {
-        font-family: "Gowun Batang", serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로필</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 
-      body {
-        font-family: "Arial", sans-serif;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+    * {
+      font-family: "Gowun Batang", serif;
+    }
 
-      .container {
-        width: 60%;
-        /* Adjusted the width */
-        max-width: 670px;
-        margin-top: 10px;
-        background-color: antiquewhite;
-        overflow: auto;
-        border-radius: 20px;
-      }
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .sweet-potato {
-        color: #ad5a90;
-      }
+    .container {
+      width: 60%;
+      /* Adjusted the width */
+      max-width: 670px;
+      margin-top: 10px;
+      background-color: antiquewhite;
+      overflow: auto;
+      border-radius: 20px;
+    }
 
-      .profile-header {
-        position: fixed;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        color: white;
+    .sweet-potato {
+      color: #ad5a90;
+    }
 
-        background-color: #2a9016;
-        display: flex;
-        justify-content: center;
-        width: 670px;
-        text-align: center;
-      }
+    .profile-header {
+      position: fixed;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      color: white;
 
-      .profile-header h2 {
-        text-align: center;
-      }
+      background-color: #2a9016;
+      display: flex;
+      justify-content: center;
+      width: 670px;
+      text-align: center;
+    }
 
-      .profile-content {
-        display: flex;
-        justify-content: flex-end;
-        padding: 20px;
-        margin-top: 90px;
-        /* Adjust the direction to column for mobile responsiveness */
-        height: 200px;
-      }
+    .profile-header h2 {
+      text-align: center;
+    }
 
-      .profile-photo {
-        border-radius: 20px;
-        margin-bottom: 72px;
-        background-color: EDD0A4;
-      }
-      #inputImage {
-        width: 70px;
-        display: inline; /* input 요소를 인라인으로 표시 */
-      }
-      #profileImage:hover {
-        transform: scale(1.1); /* 1.1배 확대 */
-      }
+    .profile-content {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      margin-top: 90px;
+      /* Adjust the direction to column for mobile responsiveness */
+      height: 200px;
+    }
 
-      .profile-intro {
-        border-radius: 5px;
-        padding-top: 2.5%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .profile-photo {
+      border-radius: 20px;
+      margin-bottom: 72px;
+      background-color: EDD0A4;
+    }
 
-        width: 100%;
-        margin-left: 2.5%;
-        background-color: #edd0a4;
-        display: flex;
-        flex-direction: column;
-      }
+    #inputImage {
+      width: 70px;
+      display: inline;
+      /* input 요소를 인라인으로 표시 */
+    }
 
-      .profile-intro-data {
-        padding-left: 5%;
-        margin-top: -25px;
-      }
+    #profileImage:hover {
+      transform: scale(1.1);
+      /* 1.1배 확대 */
+    }
 
-      li {
-        list-style-type: none;
-      }
+    .profile-intro {
+      border-radius: 5px;
+      padding-top: 2.5%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-      a {
-        text-decoration: none;
-      }
+      width: 100%;
+      margin-left: 2.5%;
+      background-color: #edd0a4;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .profile-info {
-        width: 590px;
-        height: 431px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin: 20px;
-        text-align: left;
-      }
+    .profile-intro-data {
+      padding-left: 5%;
+      margin-top: -25px;
+    }
 
-      .button-container {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        /* 오른쪽 정렬 */
-      }
+    li {
+      list-style-type: none;
+    }
 
-      .back-btn {
-        padding: 10px 20px;
-        margin: auto;
-        cursor: pointer;
-        margin-right: 20px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-        border: 1px solid #edd0a4;
-        background-color: #edd0a4;
-        font-weight: bold;
-      }
+    a {
+      text-decoration: none;
+    }
 
-      .profile-info h2 {
-        font-size: 24px;
-        /* h2 태그의 글씨 크기 조절 */
-        margin-bottom: 0.5em;
-        color: #ad5a90;
-      }
-      .profile-data {
-        height: 30px;
-        display: block;
-        padding-left: 20px;
-      }
-      .profile-data p {
-        display: inline-block;
-      }
-    </style>
-  </head>
+    .profile-info {
+      width: 590px;
+      height: 431px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      text-align: left;
+    }
 
-  <body>
-    <div class="container">
-      <div class="profile-header">
-        <h2>작물소개</h2>
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      /* 오른쪽 정렬 */
+    }
+
+    #editButton {
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-left: 1347px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #edd0a4;
+      background-color: #edd0a4;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      margin: auto;
+      cursor: pointer;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #edd0a4;
+      background-color: #edd0a4;
+      font-weight: bold;
+    }
+
+    .profile-info h2 {
+      font-size: 24px;
+      /* h2 태그의 글씨 크기 조절 */
+      margin-bottom: 0.5em;
+      color: #ad5a90;
+    }
+
+    .profile-data {
+      height: 30px;
+      display: block;
+      padding-left: 20px;
+    }
+
+    .profile-data p {
+      display: inline-block;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 80%;
+      max-width: 600px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+      display: none;
+    }
+
+    .modal.active,
+    .modal-background.active {
+      display: block;
+    }
+
+    .modal-content {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <h2>작물소개</h2>
+    </div>
+    <div class="profile-content">
+      <div class="profile-photo">
+        <img id="profileImage" style="border-radius: 10px" width="200px" height="200px" />
       </div>
-      <div class="profile-content">
-        <div class="profile-photo">
-          <img
-            id="profileImage"
-            style="border-radius: 10px"
-            width="200px"
-            height="200px"
-          />
-        </div>
-        <div class="profile-intro" style="display: inline-block">
-          <button class="modify" style="width: 30%">프로필 수정</button>
-          <!-- <button class="reset" style="width: 40%">초기화</button> -->
-          <!--프로필 정보 내용-->
-          <div id="profile-intro-data"></div>
-        </div>
+      <div class="profile-intro" style="display: inline-block">
+        <button class="modify" style="width: 30%">프로필 수정</button>
+        <!-- <button class="reset" style="width: 40%">초기화</button> -->
+        <!--프로필 정보 내용-->
+        <div id="profile-intro-data"></div>
       </div>
-
-      <p></p>
     </div>
 
-    <div id="profile-info-data" class="profile-info"></div>
+    <p></p>
+  </div>
 
-    <div class="button-container">
-      <button class="back-btn">뒤로가기</button>
-    </div>
+  <div id="profile-info-data" class="profile-info"></div>
 
-    <script type="module">
-      // Firebase SDK 라이브러리 가져오기
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-      import {
-        getFirestore,
-        doc,
-        getDoc,
-        setDoc,
-      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  <div class="button-container">
+    <button id="editButton" onclick="openModal()">수정</button>
+    <button class="back-btn">뒤로가기</button>
+  </div>
 
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyCHDdfOmNRmPQgdSi32ywIltDkkr9oOl7Q",
-        authDomain: "guhwang-c44a7.firebaseapp.com",
-        projectId: "guhwang-c44a7",
-        storageBucket: "guhwang-c44a7.appspot.com",
-        messagingSenderId: "748470665287",
-        appId: "1:748470665287:web:59255dc4ac48d65f31b162",
-        measurementId: "G-DKH49Y85N1",
-      };
+  <!-- 프로필 수정 모달 -->
+  <div id="editorModal" class="modal"
+    style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
+    <span class="modal-close" onclick="closeEditor()">&times;</span>
+    <div id="editorContent" contenteditable="true" class="modal-content"></div>
+    <button onclick="saveProfile()">저장</button>
+  </div>
+  <div id="modalBackground" class="modal-background" style="display: none;"></div>
 
-      // Firebase 인스턴스 초기화
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
+  <script type="module">
+    // Firebase SDK 라이브러리 가져오기
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc,
+      updateDoc,
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-      async function fetchProfileData(collectionName, profileId) {
-        try {
-          const docRef = doc(db, collectionName, profileId);
-          const docSnap = await getDoc(docRef);
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCHDdfOmNRmPQgdSi32ywIltDkkr9oOl7Q",
+      authDomain: "guhwang-c44a7.firebaseapp.com",
+      projectId: "guhwang-c44a7",
+      storageBucket: "guhwang-c44a7.appspot.com",
+      messagingSenderId: "748470665287",
+      appId: "1:748470665287:web:59255dc4ac48d65f31b162",
+      measurementId: "G-DKH49Y85N1",
+    };
 
-          if (docSnap.exists()) {
-            return docSnap.data();
-          } else {
-            console.log("No such document!");
-            return null;
-          }
-        } catch (error) {
-          console.error("Error fetching document: ", error);
+    // Firebase 인스턴스 초기화
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function fetchProfileData(collectionName, profileId) {
+      try {
+        const docRef = doc(db, collectionName, profileId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          return docSnap.data();
+        } else {
+          console.log("No such document!");
+          return null;
         }
+      } catch (error) {
+        console.error("Error fetching document: ", error);
       }
+    }
 
-      //프로필 데이터 로드
-      async function loadProfileData() {
-        const profileId = localStorage.getItem("currentProfileId");
-        if (profileId) {
-          // profiles 컬렉션에서 프로필 소개 정보 가져오기
-          const introData = await fetchProfileData("profiles", profileId);
-          console.log(introData);
-          if (introData) {
-            document.getElementById("profile-intro-data").innerHTML = `
+    //프로필 데이터 로드
+    async function loadProfileData() {
+      const profileId = localStorage.getItem("currentProfileId");
+      if (profileId) {
+        // profiles 컬렉션에서 프로필 소개 정보 가져오기
+        const introData = await fetchProfileData("profiles", profileId);
+        console.log(introData);
+        if (introData) {
+          document.getElementById("profile-intro-data").innerHTML = `
             <div class="profile-data">
               <strong >이름:</strong> <p id="name" class="text" contenteditable="false">${introData.name}</p>
               </div>
@@ -243,100 +311,163 @@
               <strong >한마디:</strong> <p id="comment" class="text" contenteditable="false">${introData.한마디}</p>
               </div>
             `;
-            // 이미지 로드
-            if (introData.imageUrl) {
-              document.getElementById("profileImage").src =
-                introData.imageUrl || "기본이미지경로";
-            }
+          // 이미지 로드
+          if (introData.imageUrl) {
+            document.getElementById("profileImage").src =
+              introData.imageUrl || "기본이미지경로";
           }
-        } else {
-          console.error("imageUrl is undefined or null.");
         }
-        const imagePaths = {
-          sweet_potato: "assets/img/박하은.jpg",
-          potato: "assets/img/김용태.jpg",
-          corn: "assets/img/강승훈.jpg",
-          peanut: "assets/img/장원녕.png",
-        };
+      } else {
+        console.error("imageUrl is undefined or null.");
+      }
+      const imagePaths = {
+        sweet_potato: "assets/img/박하은.jpg",
+        potato: "assets/img/김용태.jpg",
+        corn: "assets/img/강승훈.jpg",
+        peanut: "assets/img/장원녕.png",
+      };
 
-        function loadProfileImage() {
-          // 로컬 스토리지에서 사용자 ID 가져오기
-          const userId = localStorage.getItem("currentProfileId");
-          // 매핑된 이미지 경로 가져오기
-          const imagePath = imagePaths[userId] || "path/to/default/image.jpg"; // 기본 이미지 경로 설정
-          // 이미지 경로를 img 태그의 src 속성에 설정
-          document.getElementById("profileImage").src = imagePath;
-        }
+      function loadProfileImage() {
+        // 로컬 스토리지에서 사용자 ID 가져오기
+        const userId = localStorage.getItem("currentProfileId");
+        // 매핑된 이미지 경로 가져오기
+        const imagePath = imagePaths[userId] || "path/to/default/image.jpg"; // 기본 이미지 경로 설정
+        // 이미지 경로를 img 태그의 src 속성에 설정
+        document.getElementById("profileImage").src = imagePath;
+      }
 
-        // 페이지 로드 시 이미지 로드 함수 실행
-        loadProfileImage();
+      // 페이지 로드 시 이미지 로드 함수 실행
+      loadProfileImage();
 
-        // profile-infos 컬렉션에서 프로필 상세 정보 가져오기
-        const infoData = await fetchProfileData("profile-infos", profileId);
-        if (infoData) {
-          document.getElementById("profile-info-data").innerHTML = `
+      // profile-infos 컬렉션에서 프로필 상세 정보 가져오기
+      const infoData = await fetchProfileData("profile-infos", profileId);
+      if (infoData) {
+        document.getElementById("profile-info-data").innerHTML = `
               <h2><strong>${infoData.title}</strong></h2>
               <p>${infoData.자기소개}</p>
             `;
-        }
       }
+    }
 
-      loadProfileData();
+    loadProfileData();
 
-      function goBack() {
-        window.history.back();
-      }
-      function toggleContentEditable() {
-        // p 태그의 contenteditable 속성을 토글
-        const isEditable =
-          document.querySelector(".text").contentEditable === "true";
-        document
-          .querySelectorAll(".text")
-          .forEach((p) => (p.contentEditable = !isEditable));
-        // isEditable 토글
-      }
-      async function saveProfileData(editedData) {
-        try {
-          const profileId = localStorage.getItem("currentProfileId");
-          const docRef = doc(db, "profiles", profileId);
-          await setDoc(docRef, editedData, { merge: true });
-          console.log("프로필 데이터가 성공적으로 저장되었습니다.");
-        } catch (error) {
-          console.error("프로필 데이터 저장 중 오류 발생:", error);
-        }
-      }
-      function profileModify() {
-        // 수정 모드 토글
-        toggleContentEditable();
-        // 버튼 텍스트 변경
-        const buttonText = document.querySelector(".modify").innerText;
-        document.querySelector(".modify").innerText =
-          buttonText === "프로필 수정" ? "저장" : "프로필 수정";
-        // 저장 버튼일 경우, 수정 내용을 저장하고 수정 모드 종료
-        if (buttonText === "저장") {
-          const nameElement = document.getElementById("name");
-          const mbtiElement = document.getElementById("mbti");
-          const blogElement = document.getElementById("blog");
-          const commentElement = document.getElementById("comment");
-
-          const editedData = {
-            name: nameElement ? nameElement.innerText : "",
-            MBTI: mbtiElement ? mbtiElement.innerText : "",
-            blog: blogElement ? blogElement.innerText : "",
-            한마디: commentElement ? commentElement.innerText : "",
-          };
-
-          // TODO: Firebase 또는 다른 저장소에 수정된 내용 저장 로직 추가
-          console.log("저장된 내용:", editedData);
-          saveProfileData(editedData);
-          toggleContentEditable(); // 수정 모드 종료
-        }
-      }
+    function goBack() {
+      window.history.back();
+    }
+    function toggleContentEditable() {
+      // p 태그의 contenteditable 속성을 토글
+      const isEditable =
+        document.querySelector(".text").contentEditable === "true";
       document
-        .querySelector(".modify")
-        .addEventListener("click", profileModify);
-      document.querySelector(".back-btn").addEventListener("click", goBack);
-      const fileDOM = document.querySelector("#profileImage");
-    </script>
-  </body>
+        .querySelectorAll(".text")
+        .forEach((p) => (p.contentEditable = !isEditable));
+      // isEditable 토글
+    }
+    async function saveProfileData(editedData) {
+      try {
+        const profileId = localStorage.getItem("currentProfileId");
+        const docRef = doc(db, "profiles", profileId);
+        await setDoc(docRef, editedData, { merge: true });
+        console.log("프로필 데이터가 성공적으로 저장되었습니다.");
+      } catch (error) {
+        console.error("프로필 데이터 저장 중 오류 발생:", error);
+      }
+    }
+    function profileModify() {
+      // 수정 모드 토글
+      toggleContentEditable();
+      // 버튼 텍스트 변경
+      const buttonText = document.querySelector(".modify").innerText;
+      document.querySelector(".modify").innerText =
+        buttonText === "프로필 수정" ? "저장" : "프로필 수정";
+      // 저장 버튼일 경우, 수정 내용을 저장하고 수정 모드 종료
+      if (buttonText === "저장") {
+        const nameElement = document.getElementById("name");
+        const mbtiElement = document.getElementById("mbti");
+        const blogElement = document.getElementById("blog");
+        const commentElement = document.getElementById("comment");
+
+        const editedData = {
+          name: nameElement ? nameElement.innerText : "",
+          MBTI: mbtiElement ? mbtiElement.innerText : "",
+          blog: blogElement ? blogElement.innerText : "",
+          한마디: commentElement ? commentElement.innerText : "",
+        };
+
+        // TODO: Firebase 또는 다른 저장소에 수정된 내용 저장 로직 추가
+        console.log("저장된 내용:", editedData);
+        saveProfileData(editedData);
+        toggleContentEditable(); // 수정 모드 종료
+      }
+    }
+    document
+      .querySelector(".modify")
+      .addEventListener("click", profileModify);
+    document.querySelector(".back-btn").addEventListener("click", goBack);
+    const fileDOM = document.querySelector("#profileImage");
+
+    // 모달 닫기 버튼 이벤트 핸들러 추가
+    document.querySelector('.modal-close').addEventListener('click', closeEditor);
+
+    // 모달 저장 버튼 이벤트 핸들러 추가
+    document.querySelector('#editorModal button').addEventListener('click', saveProfile);
+
+    // 수정 버튼 클릭 시 모달 열기
+    document.getElementById('editButton').addEventListener('click', openModal);
+
+    // 프로필 저장 함수
+
+    async function saveProfile() {
+      // 에디터에서 수정된 내용을 가져와 프로필에 반영
+      var updatedContent = document.getElementById('editorContent').innerHTML;
+      document.querySelector('.profile-info').innerHTML = updatedContent;
+
+      // 에디터 모달 닫기
+      closeEditor();
+
+      // 프로필을 Firebase에 업데이트
+      const profileId = localStorage.getItem("currentProfileId");
+      const profileRef = doc(db, "profile-infos", profileId);
+
+      // 가져온 내용을 업데이트할 데이터로 사용
+      const updateData = {
+        자기소개: updatedContent,
+      };
+
+      updateProfile(profileRef, updateData);
+    }
+
+    async function updateProfile(profileRef, updateData) {
+      try {
+        await updateDoc(profileRef, updateData);
+        console.log("프로필이 업데이트되었습니다.");
+      } catch (error) {
+        console.error("프로필 업데이트 오류:", error);
+      }
+    }
+
+    function openModal() {
+      // 프로필 자기 소개 정보만 가져와서 에디터에 로드
+      const currentIntroduction = document.getElementById("profile-info-data").querySelector('p').innerText;
+
+      document.getElementById('editorContent').innerHTML = `
+    ${currentIntroduction}
+  `;
+
+      // 에디터 모달 표시
+      document.getElementById('editorModal').style.display = 'block';
+      document.getElementById('modalBackground').style.display = 'block';
+    }
+
+    function closeEditor() {
+      document.getElementById('editorModal').style.display = 'none';
+      document.getElementById('modalBackground').style.display = 'none';
+    }
+
+
+
+
+  </script>
+</body>
+
 </html>
