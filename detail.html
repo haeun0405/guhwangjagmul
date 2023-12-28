@@ -454,7 +454,7 @@
       const introWithoutTitle = currentIntroduction.replace(/^[^\n]*\n/, '');
 
       // 에디터에 기존 내용 뒤에 새로운 내용을 추가
-      document.getElementById('editorContent').innerHTML = introWithoutTitle.replace(/\n/g, '<br>');
+      document.getElementById('editorContent').innerHTML = introWithoutTitle;
 
       // 에디터 모달 표시
       document.getElementById('editorModal').style.display = 'block';
