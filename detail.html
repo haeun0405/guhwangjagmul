@@ -448,10 +448,10 @@
 
     function openModal() {
       // 프로필 자기 소개 정보만 가져와서 에디터에 로드
-      const currentIntroduction = document.getElementById("profile-info-data").innerText;
+      const currentIntroduction = document.getElementById("profile-info-data").innerHTML;
 
-      // 정규 표현식을 사용하여 "title" 부분 제거
-      const introWithoutTitle = currentIntroduction.replace(/^[^\n]*\n/, '');
+      // "title"을 찾아서 제거
+      const introWithoutTitle = currentIntroduction.replace(/<h2>.*?<\/h2>/, '');
 
       // 에디터에 기존 내용 뒤에 새로운 내용을 추가
       document.getElementById('editorContent').innerHTML = introWithoutTitle;
@@ -460,6 +460,7 @@
       document.getElementById('editorModal').style.display = 'block';
       document.getElementById('modalBackground').style.display = 'block';
     }
+
 
     function closeEditor() {
       document.getElementById('editorModal').style.display = 'none';
